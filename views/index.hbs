@@ -1,0 +1,37 @@
+<form action="/submit" method="POST" style="display: inline;">
+  <label for="url-input">Enter a URL:</label>
+  <div class="input-group mb-3">
+    <input
+      id="url-input"
+      type="text"
+      name="url"
+      class="form-control"
+      placeholder="http://xxx.com"
+      aria-label="Your website URL"
+      aria-describedby="button-addon"
+      required
+    />
+    <button
+      class="btn btn-outline-primary"
+      type="button submit"      
+    >Shorten</button>
+  </div>
+
+<form tyle="display: inline;">
+  <label for="url-input">This is your Shortener URL:</label>
+  <div class="input-group mb-3">
+    <input
+      id="url-short"
+      type="text"
+      name="urlShort"
+      class="form-control"      
+      aria-label="Shortener URL"
+      aria-describedby="button-addon"
+      />
+    <button
+      class="btn btn-outline-secondary copy"
+      onclick="copy()"      
+    >Copy</button>
+  </div>
+
+</form>
