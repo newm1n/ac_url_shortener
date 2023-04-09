@@ -2,36 +2,36 @@
   <label for="url-input">Enter a URL:</label>
   <div class="input-group mb-3">
     <input
-      id="url-input"
       type="text"
-      name="url"
       class="form-control"
-      placeholder="http://xxx.com"
+      placeholder="http://xxxxx.com"
       aria-label="Your website URL"
       aria-describedby="button-addon"
+      id="url-input"
+      name="url"
       required
     />
     <button
-      class="btn btn-outline-primary"
-      type="button submit"      
+      class="btn btn-outline-secondary"
+      type="button submit"
+      id="button-addon"
     >Shorten</button>
   </div>
+</form>
 
-<form tyle="display: inline;">
-  <label for="url-input">This is your Shortener URL:</label>
+<form style="display: inline;">This is your shortener URL:</label>
   <div class="input-group mb-3">
-    <input
-      id="url-short"
-      type="text"
-      name="urlShort"
-      class="form-control"      
-      aria-label="Shortener URL"
-      aria-describedby="button-addon"
-      />
-    <button
-      class="btn btn-outline-secondary copy"
-      onclick="copy()"      
-    >Copy</button>
+    <input type="text" class="form-control" id="url-shortened"
+      aria-label="Shortened URL" aria-describedby="button-addon" disabled readonly/>
+    <button class="btn btn-outline-dark" type="button" disabled>Copy</button>
   </div>
 
+  <script>
+    function copy() {
+      const URL = document.getElementById('url-shortened')
+      navigator.clipboard.writeText(URL.innerText)
+        .then(() => alert('Successfully copied!'))
+        .catch(error => console.log(error))
+    }
+  </script>
 </form>
